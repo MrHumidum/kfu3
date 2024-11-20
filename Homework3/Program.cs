@@ -21,6 +21,9 @@ namespace Lab_2
             Sunday = 7
         }
 
+        /// <summary>
+        /// Перечисление  достоинств игральных карт.
+        /// </summary>
         enum CardsNames
         {
             Шестёрка = 6,
