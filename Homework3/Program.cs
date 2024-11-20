@@ -1,10 +1,15 @@
 ﻿using System;
-using System.Diagnostics;
 
 namespace Lab_2
 {
+    /// <summary>
+    /// Главный класс программы для выполнения различных упражнений.
+    /// </summary>
     class Program
     {
+        /// <summary>
+        /// Перечисление дней недели.
+        /// </summary>
         enum DayOfTheWeek
         {
             Monday = 1,
@@ -15,12 +20,28 @@ namespace Lab_2
             Saturday = 6,
             Sunday = 7
         }
+
+        enum CardsNames
+        {
+            Шестёрка = 6,
+            Семёрка = 7,
+            Восьмёрка = 8,
+            Девятка = 9,
+            Десятка = 10,
+            Валет = 11,
+            Дама = 12,
+            Король = 13,
+            Туз = 14
+        }
+
+        /// <summary>
+        /// Проверяет, является ли последовательность из 10 чисел возрастающей, и выводит номер первого числа, нарушающего последовательность.
+        /// </summary>
         static void Ex1()
         {
-            int temp = 0;
             bool flag = true;
             int[] numbers = new int[10];
-            Console.WriteLine("Введите 10 цифр через enter(каждое новое число на новой строке)");
+            Console.WriteLine("Введите 10 цифр через enter (каждое новое число на новой строке)");
 
             for (int i = 0; i < 10; i++)
             {
@@ -30,61 +51,39 @@ namespace Lab_2
                 }
                 else
                 {
-                    Console.WriteLine("Неправильный ввод цифры");
-                }
-            }
-            for (int i = 0; i < 9; i++)
-            {
-                if (numbers[i] > numbers[i + 1])
-                {
-                    Console.WriteLine($"Число под номером {i + 2} нарушает последовательность");
+                    flag = false;
                     break;
                 }
             }
+            if (flag)
+            {
+                for (int i = 0; i < 9; i++)
+                {
+                    if (numbers[i] > numbers[i + 1])
+                    {
+                        Console.WriteLine($"Число под номером {i + 2} нарушает последовательность");
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                Console.WriteLine("Неправильный ввод");
+            }
         }
 
+        /// <summary>
+        /// Определяет достоинство игральной карты по её порядковому номеру.
+        /// Использует конструкцию try-catch-finally для обработки ошибок ввода.
+        /// </summary>
         static void Ex2()
         {
             Console.Write("Введите порядковый номер карты (от 6 до 14): ");
-            string cardValue = string.Empty;
             try
             {
-                if (int.TryParse(Console.ReadLine(), out int k) && (k >= 6 && k <= 14))
+                if (int.TryParse(Console.ReadLine(), out int num) && (num >= 6 && num <= 14))
                 {
-                    switch (k)
-                    {
-                        case 6:
-                            cardValue = "Шестёрка";
-                            break;
-                        case 7:
-                            cardValue = "Семёрка";
-                            break;
-                        case 8:
-                            cardValue = "Восьмёрка";
-                            break;
-                        case 9:
-                            cardValue = "Девятка";
-                            break;
-                        case 10:
-                            cardValue = "Десятка";
-                            break;
-                        case 11:
-                            cardValue = "Валет";
-                            break;
-                        case 12:
-                            cardValue = "Дама";
-                            break;
-                        case 13:
-                            cardValue = "Король";
-                            break;
-                        case 14:
-                            cardValue = "Туз";
-                            break;
-                        default:
-                            cardValue = k.ToString();
-                            break;
-                    };
-                    Console.WriteLine($"Достоинство карты: {cardValue}");
+                    Console.WriteLine($"Достоинство карты: {(CardsNames)num}");
                 }
                 else
                 {
@@ -100,12 +99,16 @@ namespace Lab_2
                 Console.WriteLine("Программа завершена");
             }
         }
+
+        /// <summary>
+        /// Преобразует входную строку в формат, где каждое слово начинается с заглавной буквы.
+        /// Затем выводит сообщение в зависимости от входных данных.
+        /// </summary>
         static void Ex3()
         {
             Console.Write("Введите входные данные: ");
             string input = Console.ReadLine();
             input = string.Join(" ", input.ToLower().Split(" ").Select(s => char.ToUpperInvariant(s[0]) + s.Substring(1)));
-            Console.WriteLine(input);
             switch (input)
             {
                 case "Jabroni":
@@ -129,11 +132,13 @@ namespace Lab_2
                 default:
                     Console.WriteLine("Beer");
                     break;
-
             }
-
         }
 
+        /// <summary>
+        /// Определяет название дня недели на основе его порядкового номера.
+        /// Использует перечисление DayOfTheWeek.
+        /// </summary>
         static void Ex4()
         {
             Console.Write("Введите порядковый номер дня недели: ");
@@ -147,6 +152,10 @@ namespace Lab_2
             }
         }
 
+        /// <summary>
+        /// Обходит массив строк, собирая куклы ("Hello Kitty" и "Barbie doll") в "сумку".
+        /// Выводит количество кукол и их список.
+        /// </summary>
         static void Ex5()
         {
             string[] toys = { "Teddy Bear", "Hello Kitty", "Toy Car", "Barbie doll", "LEGO Set", "Hello Kitty", "Hello Kitty", "Hello Kitty", "Hello Kitty" };
@@ -167,8 +176,12 @@ namespace Lab_2
                 bag = bag.Substring(0, bag.Length - 2);
             }
             Console.WriteLine($"В сумке {dollCount} кукол: {bag}");
-
         }
+
+        /// <summary>
+        /// Главный метод программы. Выполняет вызов методов в зависимости от выбранного упражнения.
+        /// </summary>
+        /// <param name="args">Аргументы командной строки.</param>
         static void Main(string[] args)
         {
             Console.WriteLine("№1");
@@ -176,8 +189,7 @@ namespace Lab_2
 упорядоченной по возрастанию. В случае отрицательного ответа определить
 порядковый номер первого числа, которое нарушает данную последовательность.
 Использовать break.*/
-            // Ex1();
-
+            Ex1();
 
             Console.WriteLine("№2");
             /*Игральным картам условно присвоены следующие порядковые номера в зависимости от
@@ -185,7 +197,7 @@ namespace Lab_2
 Порядковые номера остальных карт соответствуют их названиям («шестерка»,
 «девятка» и т. п.). По заданному номеру карты k (6 <=k <= 14) определить достоинство
 соответствующей карты. Использовать try-catch-finally.*/
-            // Ex2();
+            Ex2();
 
             Console.WriteLine("№3");
             /*Напишите программу, которая принимает на вход е строку и производит выходные
@@ -196,7 +208,7 @@ namespace Lab_2
 Убедитесь, что вы охватили случаи, когда некоторые слова не отображаются с
 правильным написанием заглавных букв. Например, ввод «pOLitiCIaN» должен
 по-прежнему возвращать «Your tax dollars».*/
-            // Ex3();
+            Ex3();
 
             Console.WriteLine("№4");
             /*Составить программу, которая в зависимости от порядкового номера дня недели (1, 2,
