@@ -1,0 +1,15 @@
+/Users/mrhumidum/Documents/Projects/labs/Homework3/bin/Debug/net8.0/Homework3
+/Users/mrhumidum/Documents/Projects/labs/Homework3/bin/Debug/net8.0/Homework3.deps.json
+/Users/mrhumidum/Documents/Projects/labs/Homework3/bin/Debug/net8.0/Homework3.runtimeconfig.json
+/Users/mrhumidum/Documents/Projects/labs/Homework3/bin/Debug/net8.0/Homework3.dll
+/Users/mrhumidum/Documents/Projects/labs/Homework3/bin/Debug/net8.0/Homework3.pdb
+/Users/mrhumidum/Documents/Projects/labs/Homework3/obj/Debug/net8.0/Homework3.GeneratedMSBuildEditorConfig.editorconfig
+/Users/mrhumidum/Documents/Projects/labs/Homework3/obj/Debug/net8.0/Homework3.AssemblyInfoInputs.cache
+/Users/mrhumidum/Documents/Projects/labs/Homework3/obj/Debug/net8.0/Homework3.AssemblyInfo.cs
+/Users/mrhumidum/Documents/Projects/labs/Homework3/obj/Debug/net8.0/Homework3.csproj.CoreCompileInputs.cache
+/Users/mrhumidum/Documents/Projects/labs/Homework3/obj/Debug/net8.0/Homework3.sourcelink.json
+/Users/mrhumidum/Documents/Projects/labs/Homework3/obj/Debug/net8.0/Homework3.dll
+/Users/mrhumidum/Documents/Projects/labs/Homework3/obj/Debug/net8.0/refint/Homework3.dll
+/Users/mrhumidum/Documents/Projects/labs/Homework3/obj/Debug/net8.0/Homework3.pdb
+/Users/mrhumidum/Documents/Projects/labs/Homework3/obj/Debug/net8.0/Homework3.genruntimeconfig.cache
+/Users/mrhumidum/Documents/Projects/labs/Homework3/obj/Debug/net8.0/ref/Homework3.dll
